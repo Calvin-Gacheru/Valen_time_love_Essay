@@ -11,11 +11,9 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            /* Animated Gradient */
             background: linear-gradient(-45deg,#ee9ca7,#ff9a9e, #fad0c4, #ffdde1, #ff512f, #dd2476, #ff00cc, #6a11cb);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,7 +21,6 @@
             overflow: hidden;
         }
 
-        /* The Container */
         .phone-container {
             background-color: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -35,264 +32,94 @@
             position: relative;
         }
 
-        /* Password Gate Styles */
-        #password-gate { 
-            text-align: center; 
-            color: white; 
-        }
+        #password-gate { text-align: center; color: white; }
 
         input[type="password"] { 
-            padding: 10px; 
-            border-radius: 5px; 
-            border: none; 
-            margin-bottom: 10px; 
-            width: 80%; 
+            padding: 10px; border-radius: 5px; border: none; margin-bottom: 10px; width: 80%; 
         }
 
         button.unlock-btn { 
-            font-family:Arial, Helvetica, sans-serif;
-            letter-spacing: 1px;
-            background: #ff4b4b; 
-            color: white; 
-            border: none; 
-            padding: 10px 20px; 
-            border-radius: 20px; 
-            cursor: pointer; 
-            font-weight: bold; 
-            font-size: 1em;
+            background: #ff4b4b; color: white; border: none; padding: 10px 20px; 
+            border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 1em;
         }
 
-        /* Quiz UI */
         .progress-bar { 
-            font-family:Arial, Helvetica, sans-serif;
-            letter-spacing: 1px;
-            font-style: italic;
-            text-shadow: 1px 1px 2px rgba(106, 17, 203, 0.3);
-            background: #fff; 
-            color: #6a11cb; 
-            padding: 10px; 
-            border-radius: 10px; 
-            text-align: center; 
-            font-weight: bold; 
-            margin-bottom: 15px; 
+            font-style: italic; text-shadow: 1px 1px 2px rgba(106, 17, 203, 0.3);
+            background: #fff; color: #6a11cb; padding: 10px; border-radius: 10px; 
+            text-align: center; font-weight: bold; margin-bottom: 15px; 
         }
+        
         .card { 
-            background: rgba(255, 255, 255, 0.85); 
-            backdrop-filter: blur(10px);            
-            border: 1px solid rgba(255, 255, 255, 0.5); 
-
             background: rgba(255, 255, 255, 0.4); 
-            padding: 20px; 
-            border-radius: 30px; 
-            text-align: center; 
+            padding: 20px; border-radius: 30px; text-align: center; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative; 
+            min-height: 400px; display: flex; flex-direction: column; 
+            justify-content: center; position: relative; 
         }
         
         #quiz-container { display: none; flex-direction: column; }
         .question-text { font-size: 1.2em; margin-bottom: 20px; font-weight: 600; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         
-        /* TEXT AREA STYLES */
         textarea {
-            width: 90%;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.7);
-            border: 2px solid #fff;
-            border-radius: 15px;
-            padding: 15px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1em;
-            color: #333;
-            resize: none;
-            outline: none;
-            transition: 0.3s;
+            width: 90%; margin: 0 auto; background: rgba(255,255,255,0.7);
+            border: 2px solid #fff; border-radius: 15px; padding: 15px;
+            font-family: 'Poppins', sans-serif; font-size: 1em; color: #333;
+            resize: none; outline: none; transition: 0.3s;
         }
-        textarea:focus {
-            background: rgba(255,255,255,0.95);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
+        textarea:focus { background: rgba(255,255,255,0.95); box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); }
 
         .next-btn {
-            margin-top: 20px;
-            background: #6a11cb;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1.1em;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
+            margin-top: 20px; background: #6a11cb; color: white; border: none;
+            padding: 12px 30px; border-radius: 50px; font-size: 1.1em;
+            cursor: pointer; font-weight: bold; transition: 0.3s;
         }
-        .next-btn:hover { background: #8e2de2; transform: scale(1.05); }
 
-        /* Proposal Styles */
         #proposal-container { 
-            font-size: 1.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            font-family: 'Pacifico', cursive;
-            letter-spacing: 1px;
-            display: none; 
-            flex-direction: column;
-            justify-content: center;
-            position: relative;}
+            font-size: 1.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-family: 'Pacifico', cursive; display: none; flex-direction: column;
+            justify-content: center; position: relative;
+        }
         .btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
         
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 10px 10px rgba(40, 167, 69, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
-        }
         .yes-btn { 
-            font-family:Arial, Helvetica, sans-serif;
-            letter-spacing: 0.5px;
-            background-color: #32cd32; 
-            color: white; 
-            padding: 15px 40px; 
-            border: none; 
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.3em; 
-            animation: pulse 2s infinite;
-            cursor: pointer;
+            background-color: #32cd32; color: white; padding: 15px 40px; 
+            border: none; border-radius: 50px; font-weight: bold; font-size: 1.3em; 
+            animation: pulse 2s infinite; cursor: pointer;
         }
-
         .no-btn { 
-            font-family: Arial, Helvetica, sans-serif;
-            letter-spacing: 1px;
-            background-color: #ff3b3b; 
-            color: white; 
-            padding: 15px 40px; 
-            border: none; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            font-size: 1.3em; 
-            transition: all 0.3s ease; 
+            background-color: #ff3b3b; color: white; padding: 15px 40px; 
+            border: none; border-radius: 50px; font-weight: bold; cursor: pointer; 
+            font-size: 1.3em; transition: all 0.3s ease; 
         }
 
-        /* Success Styles */
         #success-container { display: none; flex-direction: column; }
+        #loading-overlay { display: none; flex-direction: column; align-items: center; justify-content: center; height: 100%; }
 
-        /* Error Popups */
-        #system-error-overlay {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #2d2d2d;
-            color: #ff4b4b;
-            padding: 15px;
-            border-radius: 8px;
-            border: 2px solid #ff4b4b;
-            text-align: center;
-            display: none;
-            z-index: 200;
-            width: 85%;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        @keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.15); } 100% { transform: scale(1); } }
-        @keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(-6px); } 50% { transform: translateX(6px); } 75% { transform: translateX(-6px); } 100% { transform: translateX(0); } }
+        /* Animation Keyframes */
+        @keyframes pulse { 0% { transform: scale(1); } 70% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         @keyframes heartbeat { 0% { transform: scale(1); } 15% { transform: scale(1.05); } 30% { transform: scale(1); } 45% { transform: scale(1.05); } 60% { transform: scale(1); } 100% { transform: scale(1); } }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        @keyframes fall-heart { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
+        @keyframes animate { 0%{ transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; } 100%{ transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; } }
 
-        #success-container .card { animation: heartbeat 1.5s infinite; }
-
-        /* Heart Confetti */
-        #heart-confetti {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 300;
-        }
-        .confetti-heart {
-            position: absolute;
-            top: -10%;
-            font-size: 22px;
-            opacity: 0.9;
-            animation: fall-heart 6s linear forwards;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        @keyframes fall-heart {
-            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-        }
-        /* Floating Background Hearts */
-        .circles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            z-index: -1; 
-        }
-
-        .circles li {
-            position: absolute;
-            display: block;
-            list-style: none;
-            width: 20px;
-            height: 20px;
-            font-size: bold; 
-            color: rgba(255, 255, 255, 0.7); 
-            bottom: -150px;
-            animation: animate 25s linear infinite;
-            white-space: nowrap; 
-            text-shadow: 0 0 25px rgba(0,0,0,0.2);
-        }
-
-        /* LAYER 1 SPECIFIC: The Giants */
-        #bg-layer-1 li:nth-child(1){ left: 25%; font-size: 80px; animation-delay: 0s; }
-        #bg-layer-1 li:nth-child(2){ left: 10%; font-size: 40px; animation-delay: 2s; animation-duration: 12s; }
-        #bg-layer-1 li:nth-child(3){ left: 70%; font-size: 40px; animation-delay: 4s; }
-        #bg-layer-1 li:nth-child(4){ left: 40%; font-size: 100px; animation-delay: 0s; animation-duration: 18s; }
-        #bg-layer-1 li:nth-child(5){ left: 65%; font-size: 40px; animation-delay: 0s; }
+        /* Background Layers */
+        .circles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0; z-index: -1; }
+        .circles li { position: absolute; display: block; list-style: none; width: 20px; height: 20px; color: rgba(255, 255, 255, 0.7); bottom: -150px; animation: animate 25s linear infinite; }
+        
+        #bg-layer-1 li:nth-child(1){ left: 25%; font-size: 80px; }
+        #bg-layer-1 li:nth-child(2){ left: 10%; font-size: 40px; animation-duration: 12s; }
+        #bg-layer-1 li:nth-child(3){ left: 70%; font-size: 40px; }
+        #bg-layer-1 li:nth-child(4){ left: 40%; font-size: 100px; animation-duration: 18s; }
+        #bg-layer-1 li:nth-child(5){ left: 65%; font-size: 40px; }
         #bg-layer-1 li:nth-child(6){ left: 75%; font-size: 150px; animation-delay: 3s; }
         #bg-layer-1 li:nth-child(7){ left: 35%; font-size: 200px; animation-delay: 7s; }
-        #bg-layer-1 li:nth-child(8){ left: 50%; font-size: 50px; animation-delay: 15s; animation-duration: 45s; }
-        #bg-layer-1 li:nth-child(9){ left: 20%; font-size: 30px; animation-delay: 2s; animation-duration: 35s; }
-        #bg-layer-1 li:nth-child(10){ left: 85%; font-size: 180px; animation-delay: 0s; animation-duration: 11s; }
+        #bg-layer-1 li:nth-child(8){ left: 50%; font-size: 50px; animation-duration: 45s; }
         
-        /* LAYER 2 SPECIFIC: Text Styling */
-        #bg-layer-2 li {
-            width: auto; height: auto;
-            font-weight: bold;
-            color: rgba(255, 255, 255, 0.9);
-            font-family: sans-serif;
-        }
+        #bg-layer-2 li { width: auto; height: auto; font-weight: bold; color: rgba(255, 255, 255, 0.9); font-family: sans-serif; }
+        #success-container .card { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); animation: heartbeat 1.5s infinite; }
         
-        @keyframes animate {
-            0%{ transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
-            100%{ transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
-        }
-
-        /* Success Styles */
-        #success-container .card { 
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px); 
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-            color: #fff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
+        #heart-confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 300; }
+        .confetti-heart { position: absolute; top: -10%; font-size: 22px; opacity: 0.9; animation: fall-heart 6s linear forwards; }
     </style>
 </head>
 <body>
@@ -319,21 +146,21 @@
             <div class="progress-bar">Question <span id="current-q-num">1</span> of <span id="total-questions">15</span></div>
             <div class="card">
                 <div class="question-text" id="question-text">Loading...</div>
-                
-                <textarea id="answer-input" rows="4" placeholder="Type your answer here, Sheldon..."></textarea>
-                
+                <textarea id="answer-input" rows="4" placeholder="Type your answer here, King..."></textarea>
                 <button class="next-btn" onclick="nextQuestion()">Next 💖</button>
             </div>
         </div>
 
         <div id="proposal-container" style="display:none; flex-direction: column;">
-            <div class="card">
+            <div class="card" id="proposal-card-content">
                 <h2 id="proposal-question" style="margin-bottom: 20px; line-height: 1.4;">Mfalme,<br>will you be my Valentine?</h2>
-                
                 <div class="btn-group">
                     <button class="yes-btn" id="yes-btn" onclick="handleProposal('yes')">Yes ❤️</button>
                     <button class="no-btn" id="no-btn" onclick="handleNoClick()">No</button>
                 </div>
+            </div>
+            <div id="loading-overlay">
+                <h3 style="color: white;">Sending your love... ❤️</h3>
             </div>
         </div>
 
@@ -341,14 +168,9 @@
             <div class="card">
                 <h2>🎉 Yay! ❤️ 🎉</h2>
                 <p style="font-size: 40px; margin: 10px 0;">🥂🥰</p>
-                <p style="font-weight: bold; color: #fff;">Your answers have been sent to my email!</p>
+                <p style="font-weight: bold; color: #fff;">Answers Saved!</p>
                 <p style="font-size: 0.9em;">I love you, King SK.</p>
             </div>
-        </div>
-
-        <div id="system-error-overlay">
-            <div style="font-size: 1.2em; margin-bottom: 5px;">❌ Invalid choice.</div>
-            <div style="font-size: 0.9em; color: white;">System has detected you are already my Valentine.</div>
         </div>
 
     </div>
@@ -357,13 +179,14 @@
     
     <script>
         // --- CONFIGURATION ---
-        const CORRECT_PASSWORD = "4378"; 
+        const CORRECT_PASSWORD = "4338"; 
         
-        // !!! IMPORTANT: CHANGE THIS EMAIL TO YOURS !!!
-        const YOUR_EMAIL =  "faithmajorj37@gmail.com";  
-        
-        // OPTIONAL: Add a YouTube Music ID here if you want background music
-        let MUSIC_ID = "EhXdOmA1abw"; // Lofi Hip Hop default 
+        // --- GOOGLE SHEETS URL (PASTE YOUR DEPLOYED WEB APP URL HERE) ---
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6fhoi1jE4bmnecaFop1C666koTQmm8-wVKfiVk75S08a42aR8Q0z4FrTB9KFc5OOg/exec"; 
+
+
+        // --- YOUTUBE MUSIC ID ---
+        let MUSIC_ID = "EhXdOmA1abw"; 
 
         // --- DATA ---
         const questionList = [
@@ -379,7 +202,7 @@
             "What’s your favorite way for us to end a long day together?",
             "How do I make your life better?",
             "What’s something you’re excited about with us this year?",
-            "Sheldon… are you smiling yet?",
+            "King… are you smiling yet?",
             "Do you know how much you mean to me?",
             "Are you ready for one last question?"
         ];
@@ -406,17 +229,12 @@
         function onYouTubeIframeAPIReady() {
             if(MUSIC_ID) {
                 player = new YT.Player('music-player', {
-                    height: '0', 
-                    width: '0', 
-                    videoId: MUSIC_ID,
+                    height: '0', width: '0', videoId: MUSIC_ID,
                     playerVars: { 
-                        'autoplay': 0, 
-                        'controls': 0, 
-                        'loop': 1, 
-                        'playlist': MUSIC_ID, 
-                        'playsinline': 1, 
-                        'enablejsapi': 1,
-                        'origin': window.location.origin },
+                        'autoplay': 1, 'controls': 0, 'loop': 1, 
+                        'playlist': MUSIC_ID, 'playsinline': 1, 'enablejsapi': 1,
+                        'origin': window.location.origin
+                    },
                     events: { 
                         'onReady': onPlayerReady,
                         'onStateChange': onPlayerStateChange
@@ -425,26 +243,18 @@
             }
         }
 
-        // function onPlayerReady(event) {
-        //     document.body.addEventListener('click', function() {
-        //         if (player && player.getPlayerState() !== 1) {
-        //             player.playVideo();
-        //             player.setVolume(50);
-        //         }
-        //     }, { once: true });
-        // } 
         function onPlayerReady(event) {
-            event.target.playVideo(); // Try immediately
+            event.target.playVideo();
             event.target.setVolume(50);
         }
-        // If it fails to start, wait for the first click on the body
+
         function onPlayerStateChange(event) {
              if (event.data === YT.PlayerState.UNSTARTED || event.data === -1) {
                 document.body.addEventListener('click', function() {
                     player.playVideo();
                 }, { once: true });
              }
-        }  
+        }
 
         // --- APP LOGIC ---
         function checkPassword() {
@@ -453,8 +263,6 @@
                 document.getElementById('password-gate').style.display = 'none';
                 document.getElementById('quiz-container').style.display = 'flex';
                 loadQuestion();
-                
-                // Trigger music attempt
                 if(player && typeof player.playVideo === 'function') player.playVideo();
             } else {
                 document.getElementById('error-msg').style.display = 'block';
@@ -462,25 +270,16 @@
         }
 
         function loadQuestion() {
-            // Update Text
             document.getElementById('question-text').textContent = questionList[currentQuestionIndex];
             document.getElementById('current-q-num').textContent = currentQuestionIndex + 1;
-            
-            // Clear Input
             document.getElementById('answer-input').value = "";
             document.getElementById('answer-input').focus();
         }
 
         function nextQuestion() {
             const inputVal = document.getElementById('answer-input').value;
-            
-            // Validation: Make sure he writes something!
-            if(inputVal.trim() === "") {
-                alert("Please write something! 🥺");
-                return;
-            }
+            if(inputVal.trim() === "") { alert("Please write something! 🥺"); return; }
 
-            // Save Answer
             collectedAnswers.push({
                 question: questionList[currentQuestionIndex],
                 answer: inputVal
@@ -491,7 +290,6 @@
             if (currentQuestionIndex < questionList.length) {
                 loadQuestion();
             } else {
-                // Done with questions, show proposal
                 document.getElementById('quiz-container').style.display = 'none';
                 document.getElementById('proposal-container').style.display = 'flex';
             }
@@ -500,55 +298,47 @@
         // --- PROPOSAL LOGIC ---
         function handleNoClick() {
             if(currentMood !== 'sad'){ setMood('sad'); }
-            
-            // Shake the screen for effect
             const noBtn = document.getElementById('no-btn');
             const card = document.querySelector('#proposal-container .card');
             const maxX = card.clientWidth - noBtn.offsetWidth;
             const maxY = card.clientHeight - noBtn.offsetHeight;
-
             noBtn.style.position = 'absolute';
             noBtn.style.left = Math.floor(Math.random() * maxX) + 'px';
             noBtn.style.top = Math.floor(Math.random() * maxY) + 'px';
-            card.style.animation = "shake 0.5s ease";
-            setTimeout(() => { card.style.animation = ""; }, 500);
         }
 
         function handleProposal(answer) {
             if (answer === 'yes') {
-                document.getElementById('proposal-container').style.display = 'none';
-                document.getElementById('success-container').style.display = 'flex';
-                setMood('happy');
-                launchHeartConfetti();
+                document.getElementById('proposal-card-content').style.display = 'none';
+                document.getElementById('loading-overlay').style.display = 'flex';
                 
-                // SEND EMAIL LOGIC
-                sendEmail();
-
-            } else {
-                // "No" error overlay
-                const errorPopup = document.getElementById('system-error-overlay');
-                errorPopup.style.display = 'block';
-                setTimeout(() => { errorPopup.style.display = 'none'; }, 3000);
+                // SEND TO GOOGLE SHEETS
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // IMPORTANT for Google Sheets
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(collectedAnswers)
+                })
+                .then(response => {
+                    // Even with no-cors, we assume success if no error thrown
+                    console.log("Sent to Sheets");
+                    showSuccess();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("The internet is acting up, but I still love you! (Screenshot this!)");
+                    showSuccess();
+                });
             }
         }
 
-        function sendEmail() {
-            let emailBody = "Hey Mfalme! Here are my Valentine answers:\n\n";
-            
-            collectedAnswers.forEach((item, index) => {
-                emailBody += `Q${index+1}: ${item.question}\n`;
-                emailBody += `>> ${item.answer}\n\n`;
-            });
-
-            emailBody += "\nYES, I will be your Valentine! ❤️";
-
-            const subject = "My Valentine Answers - King SK";
-            
-            // Create mailto link
-            const mailtoLink = `mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-            
-            // Trigger open
-            window.location.href = mailtoLink;
+        function showSuccess() {
+            document.getElementById('proposal-container').style.display = 'none';
+            document.getElementById('success-container').style.display = 'flex';
+            setMood('happy');
+            launchHeartConfetti();
         }
 
         // --- VISUALS ---
@@ -563,7 +353,6 @@
             const layer2 = document.getElementById('bg-layer-2');
             layer2.style.display = 'block';
             layer2.innerHTML = ''; 
-
             const items = moods[moodType];
             for(let i = 0; i < 20; i++) {
                 const li = document.createElement('li');
@@ -580,7 +369,6 @@
             const confetti = document.getElementById('heart-confetti');
             const count = 25; 
             const hearts = ['❤️', '💖', '💘', '💕', '🌹', '🥀', '🌺', '🌻', '🌼', '🌷', '💐'];
-
             function spawnHeart(i) {
                 const heart = document.createElement('div');
                 heart.className = 'confetti-heart';
@@ -597,7 +385,6 @@
             const intervalId = setInterval(() => { spawnHeart(i); i += 1; }, 350);
             setTimeout(() => { clearInterval(intervalId); }, 12000);
         }
-
     </script>
 </body>
 </html>
