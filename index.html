@@ -341,7 +341,7 @@
             <div class="card">
                 <h2>🎉 Yay! ❤️ 🎉</h2>
                 <p style="font-size: 40px; margin: 10px 0;">🥂🥰</p>
-                <p style="font-weight: bold; color: #fff;">Your answers have been sent to my email!</p>
+                <p style="font-weight: bold; color: #fff;">I am yours and you are mine💏!</p>
                 <p style="font-size: 0.9em;">I love you, King SK.</p>
             </div>
         </div>
@@ -357,13 +357,18 @@
     
     <script>
         // --- CONFIGURATION ---
-        const CORRECT_PASSWORD = "123"; 
+        const CORRECT_PASSWORD = "3476"; 
         
         // !!! IMPORTANT: CHANGE THIS EMAIL TO YOURS !!!
-        const YOUR_EMAIL =  "calvin.g.mwangi@gmail.com"; //"faithmajorj37@gmail.com";  
+        const YOUR_EMAIL =  "faithmajorj37@gmail.com";  
         
         // OPTIONAL: Add a YouTube Music ID here if you want background music
         let MUSIC_ID = "EhXdOmA1abw"; // Lofi Hip Hop default
+
+        // --- EMAILJS CONFIGURATION (FILL THESE IN!) ---
+        const EMAILJS_SERVICE_ID = "service_d4qenrm";   // e.g. service_xyz
+        const EMAILJS_TEMPLATE_ID = "template_q75ubbf"; // e.g. template_abc
+        const EMAILJS_PUBLIC_KEY = "4jUGyWZLkfw-wK-Ij";   // e.g. user_123
 
         // --- DATA ---
         const questionList = [
@@ -392,6 +397,10 @@
         // --- STARTUP ---
         window.onload = function() {
             document.getElementById('total-questions').textContent = questionList.length;
+            // Initialize EmailJS
+            if(EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+                emailjs.init(EMAILJS_PUBLIC_KEY);
+            }
             loadYoutubeScript();
         };
 
@@ -518,12 +527,30 @@
             if (answer === 'yes') {
                 document.getElementById('proposal-container').style.display = 'none';
                 document.getElementById('success-container').style.display = 'flex';
+
                 setMood('happy');
                 launchHeartConfetti();
-                
-                // SEND EMAIL LOGIC
-                sendEmail();
+                // Prepare email content
+                let emailBody = "❤️ Valentine Answers from King SK ❤️\n\n";
+                collectedAnswers.forEach((item, index) => {
+                    emailBody += `Q${index+1}: ${item.question}\nAnswer: ${item.answer}\n\n----------------\n\n`;
+                });
+                emailBody += "FINAL ANSWER: YES, he will be your Valentine! ❤️";
 
+                // SEND VIA EMAILJS
+                const templateParams = {
+                    message: emailBody
+                };
+
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        showSuccess();
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        alert("The internet is acting up, but I still love you! (Screenshot this and send it to me!)");
+                        showSuccess(); // Show success anyway so the moment isn't ruined
+                    });
             } else {
                 // "No" error overlay
                 const errorPopup = document.getElementById('system-error-overlay');
@@ -531,25 +558,24 @@
                 setTimeout(() => { errorPopup.style.display = 'none'; }, 3000);
             }
         }
-
-        function sendEmail() {
-            let emailBody = "Hey Mfalme! Here are my Valentine answers:\n\n";
+        // function sendEmail() {
+        //     let emailBody = "Hey Mfalme! Here are my Valentine answers:\n\n";
             
-            collectedAnswers.forEach((item, index) => {
-                emailBody += `Q${index+1}: ${item.question}\n`;
-                emailBody += `>> ${item.answer}\n\n`;
-            });
+        //     collectedAnswers.forEach((item, index) => {
+        //         emailBody += `Q${index+1}: ${item.question}\n`;
+        //         emailBody += `>> ${item.answer}\n\n`;
+        //     });
 
-            emailBody += "\nYES, I will be your Valentine! ❤️";
+        //     emailBody += "\nYES, I will be your Valentine! ❤️";
 
-            const subject = "My Valentine Answers - King SK";
+        //     const subject = "My Valentine Answers - King SK";
             
-            // Create mailto link
-            const mailtoLink = `mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        //     // Create mailto link
+        //     const mailtoLink = `mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
             
-            // Trigger open
-            window.location.href = mailtoLink;
-        }
+        //     // Trigger open
+        //     window.location.href = mailtoLink;
+        // }
 
         // --- VISUALS ---
         const moods = {
