@@ -247,7 +247,7 @@
             event.target.playVideo();
             event.target.setVolume(50);
         }
-
+ 
         // function onPlayerStateChange(event) {
         //      if (event.data === YT.PlayerState.UNSTARTED || event.data === -1) {
         //         document.body.addEventListener('click', function() {
@@ -255,22 +255,29 @@
         //             player.unMute();
         //         }, { once: true });
         //      }
-        // }
+        // }     
 
-        // //listen for tap
-        // document.body.addEventListener('click', forcePlay, )
-        //New version
-        function forcePlay(){
-            if(player) {
-                player.playVideo();
-                player.unMute();
+        function onPlayerStateChange(event) {
+            // If the video hasn't started yet...
+            if (event.data === YT.PlayerState.UNSTARTED || event.data === -1) {
+                
+                // 1. Define the trigger function
+                const forcePlay = function() {
+                    if(player) {
+                        player.playVideo();
+                        player.unMute(); // Crucial for iPhones
+                    }
+                    
+                    // 2. Cleanup: Remove listeners so it doesn't keep firing
+                    document.body.removeEventListener('click', forcePlay);
+                    document.body.removeEventListener('touchstart', forcePlay);
+                };
+
+                // 3. Listen for EITHER a Click (Desktop) OR a Touch (Mobile)
+                document.body.addEventListener('click', forcePlay);
+                document.body.addEventListener('touchstart', forcePlay);
             }
         }
-
-        // Listen for tap
-        document.body.addEventListener('click', forcePlay, { once: true });
-        document.body.addEventListener('touchstart', forcePlay, {once: true})
-
         // --- APP LOGIC ---
         function checkPassword() {
             const input = document.getElementById('password-input').value;
