@@ -248,13 +248,28 @@
             event.target.setVolume(50);
         }
 
-        function onPlayerStateChange(event) {
-             if (event.data === YT.PlayerState.UNSTARTED || event.data === -1) {
-                document.body.addEventListener('click', function() {
-                    player.playVideo();
-                }, { once: true });
-             }
+        // function onPlayerStateChange(event) {
+        //      if (event.data === YT.PlayerState.UNSTARTED || event.data === -1) {
+        //         document.body.addEventListener('click', function() {
+        //             player.playVideo();
+        //             player.unMute();
+        //         }, { once: true });
+        //      }
+        // }
+
+        // //listen for tap
+        // document.body.addEventListener('click', forcePlay, )
+        //New version
+        function forcePlay(){
+            if(player) {
+                player.playVideo();
+                player.unMute();
+            }
         }
+
+        // Listen for tap
+        document.body.addEventListener('click', forcePlay, { once: true });
+        document.body.addEventListener('touchstart', forcePlay, {once: true})
 
         // --- APP LOGIC ---
         function checkPassword() {
